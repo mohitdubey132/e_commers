@@ -63,4 +63,11 @@ userSchema.methods.getJWTToken = function(){
     return JWT.sign({ id: this._id, }, process.env.JWT_SECRET);
 };
 
+// compair password to login new user
+
+userSchema.methods.compairPassword=  async function(enterdPassword){
+          return await bcrypt.compare(enterdPassword,this.password)
+
+}
+
 module.exports = mongoose.model('user', userSchema);
