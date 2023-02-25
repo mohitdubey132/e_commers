@@ -1,7 +1,7 @@
 const app = require('./app')
 const {createDatabase} = require('./config/database')
 createDatabase();
-server = app.listen(process.env.PORT,()=>{
+const server = app.listen(process.env.PORT,()=>{
     console.log(`server is listening on port ${process.env.PORT}`)
     console.log(typeof process.env.JWT_SECRET)
 });
